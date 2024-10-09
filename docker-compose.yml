@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  spring-api-image:
+    image: ms-config-server
+    container_name: ms-config-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    networks:
+      - spring-network
+
+networks:
+  spring-network:
+#volumes:
+#  mysql-volume:
